@@ -4,9 +4,21 @@ GET http://localhost:9000/api HTTP/1.1
 ###
 POST http://localhost:9000/api HTTP/1.1
 Content-Type: application/json
+
 {
     "nome":"HTML/CSS",
     "duracao":"72 Hrs",
-    "detalhes":"Aprenda a usar HTML e CSS para criar páginas web. HTML é a linguagem de marcação. CSS é a linguagem de estilos que você usa para estilizar a página.",
+    "detalhes":"Aprenda a usar HTML e CSS para criar páginas web.",
     "price": 120.00
+}
+
+###
+DELETE http://localhost:9000/api/1 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "price": 240.00
 }
