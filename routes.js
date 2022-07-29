@@ -12,6 +12,18 @@ routes.get('/', (req, res) => {
     })
 })
 
+routes.post('/', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        
+        conn.query('INSERT INTO detalhes_courses set ?', [req.body],(err, rows) => {
+        if (err) return res.send(err)
+        res.send('courses added')
+
+       })
+    })
+})
+
 
 
 
