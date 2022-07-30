@@ -6,19 +6,20 @@ POST http://localhost:9000/api HTTP/1.1
 Content-Type: application/json
 
 {
-    "nome":"HTML/CSS",
-    "duracao":"72 Hrs",
-    "detalhes":"Aprenda a usar HTML e CSS para criar páginas web.",
-    "price": 120.00
+    "nome":"Maria Prieto",
+    "email":"mariaprieto4@gmail.com",
+    "phone":"(11)96239-1232",
+    "endereco": "Estrada Galvao Bueno"
 }
 
 ###
-DELETE http://localhost:9000/api/2 HTTP/1.1
+DELETE http://localhost:9000/api/3 HTTP/1.1
 
 ###
-PUT http://localhost:9000/api/2 HTTP/1.1
+PUT http://localhost:9000/api/1 HTTP/1.1
 Content-Type: application/json
 
 {
-    "price": 240.00
+    "phone": "(11)96779-1232"
+
 }

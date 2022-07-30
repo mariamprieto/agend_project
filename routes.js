@@ -4,7 +4,7 @@ const routes = express.Router()
 routes.get('/', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
-        conn.query('SELECT * FROM detalhes_courses', (err, rows) => {
+        conn.query('SELECT * FROM directory', (err, rows) => {
             if (err) return res.send(err)
             res.send(rows)
 
@@ -16,23 +16,24 @@ routes.post('/', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
 
-        conn.query('INSERT INTO detalhes_courses set ?', [req.body], (err, rows) => {
+        conn.query('INSERT INTO directory set ?', [req.body], (err, rows) => {
             if (err) return res.send(err)
 
-            res.send('courses added')
+            res.send('directory added')
 
         })
     })
 })
 
+
 routes.delete('/:idCourse', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
 
-        conn.query('DELETE FROM detalhes_courses WHERE idCourse= ?', [req.params.idCourse], (err, rows) => {
+        conn.query('DELETE FROM directory WHERE id= ?', [req.params.idCourse], (err, rows) => {
             if (err) return res.send(err)
 
-            res.send('courses delete')
+            res.send('directory delete')
 
         })
     })
@@ -42,10 +43,10 @@ routes.put('/:idCourse', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
 
-        conn.query('UPDATE detalhes_courses set ? WHERE idCourse= ?', [req.body,req.params.idCourse], (err, rows) => {
+        conn.query('UPDATE directory set ? WHERE id= ?', [req.body,req.params.idCourse], (err, rows) => {
             if (err) return res.send(err)
 
-            res.send('courses update')
+            res.send('directory update')
 
         })
     })
