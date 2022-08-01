@@ -18,11 +18,11 @@ Content-Type: application/json
 DELETE http://localhost:9000/api/detalhes_course/3 HTTP/1.1
 
 ###
-PUT http://localhost:9000/api/detalhes_course/2 HTTP/1.1
+PUT http://localhost:9000/api/detalhes_course/1 HTTP/1.1
 Content-Type: application/json
 
 {
-    "price":1200
+    "price":3200
 
 }
 
@@ -45,14 +45,14 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:9000/api/estudantes/3 HTTP/1.1
+DELETE http://localhost:9000/api/estudantes/4 HTTP/1.1
 
 ###
-PUT http://localhost:9000/api/estudantes/1 HTTP/1.1
+PUT http://localhost:9000/api/estudantes/2 HTTP/1.1
 Content-Type: application/json
 
 {
-    "email":"mariap@gmail.com"
+    "email":"miljyhap@gmail.com"
 
 }
 
@@ -65,22 +65,22 @@ POST http://localhost:9000/api/professores HTTP/1.1
 Content-Type: application/json
 
 {
-    "nome":"Marcos Loaiza",
-    "usuario":"marcol",
-    "senha": "pbrtefg",
-    "image": "Marco.jpg",
-     "id_courses":2
+    "nome":"Carlos Loaiza",
+    "usuario":"carlosl",
+    "senha": "ptrtefg",
+    "image": "Carlo.jpg",
+     "id_courses":5
     }
 
 
 ###
-DELETE http://localhost:9000/api/professores/2 HTTP/1.1
+DELETE http://localhost:9000/api/professores/4 HTTP/1.1
 
 ###
 PUT http://localhost:9000/api/professores/3 HTTP/1.1
 Content-Type: application/json
 
 {
-    "usuario":"loaizam"
+    "usuario":"moaizam"
 
 }
