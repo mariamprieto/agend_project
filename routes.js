@@ -159,6 +159,8 @@ routes.put('/professores/:idProfessor', (req, res) => {
     })
 })
 
+//inscripcao
+
 
 
 module.exports = routes
