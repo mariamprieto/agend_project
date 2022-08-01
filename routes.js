@@ -26,7 +26,7 @@ routes.post('/detalhes_course', (req, res) => {
 })
 
 
-routes.delete('/detalhes_courses/:idCourse', (req, res) => {
+routes.delete('/detalhes_course/:idCourse', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
 
@@ -39,7 +39,7 @@ routes.delete('/detalhes_courses/:idCourse', (req, res) => {
     })
 })
 
-routes.put('/detalhes_courses/:idCourse', (req, res) => {
+routes.put('/detalhes_course/:idCourse', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
 
@@ -83,7 +83,7 @@ routes.delete('/estudantes/:idEstudantes', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
 
-        conn.query('DELETE FROM estudantes WHERE idEstudantes ?', [req.params.idEstudantes], (err, rows) => {
+        conn.query('DELETE FROM estudantes WHERE idEstudantes= ?', [req.params.idEstudantes], (err, rows) => {
             if (err) return res.send(err)
 
             res.send('estudantes delete')
@@ -92,7 +92,7 @@ routes.delete('/estudantes/:idEstudantes', (req, res) => {
     })
 })
 
-routes.put('estudantes/:idEstudantes', (req, res) => {
+routes.put('/estudantes/:idEstudantes', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
 
@@ -137,7 +137,7 @@ routes.delete('/professores/:idProfessor', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
 
-        conn.query('DELETE FROM professores WHERE idProfessor ?', [req.params.idProfessor], (err, rows) => {
+        conn.query('DELETE FROM professores WHERE idProfessor= ?', [req.params.idProfessor], (err, rows) => {
             if (err) return res.send(err)
 
             res.send('professor delete')

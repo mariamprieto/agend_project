@@ -6,23 +6,23 @@ POST http://localhost:9000/api/detalhes_course HTTP/1.1
 Content-Type: application/json
 
 {
-    "nome":"REACT",
-    "duracao":"240 hrs",
-    "detalhes":"curso react",
-    "price": 250,
-    "image": "Maria.jpg"
+    "nome":"Python",
+    "duracao":"720 hrs",
+    "detalhes":"curso python",
+    "price": 1500,
+    "image": "python.jpg"
     }
 
 
 ###
-DELETE http://localhost:9000/api/detalhes_course/2 HTTP/1.1
+DELETE http://localhost:9000/api/detalhes_course/3 HTTP/1.1
 
 ###
 PUT http://localhost:9000/api/detalhes_course/2 HTTP/1.1
 Content-Type: application/json
 
 {
-    "price":350
+    "price":1200
 
 }
 
@@ -35,17 +35,17 @@ POST http://localhost:9000/api/estudantes HTTP/1.1
 Content-Type: application/json
 
 {
-    "nome":"Mildred Perez",
-    "usuario":"mildrem",
-    "email":"mildredperez@gmail.com",
-    "senha": "abctefg",
-    "resenha":"abctefg",
-    "image": "Mildred.jpg"
+    "nome":"Milagros Zambrano",
+    "usuario":"milagroz",
+    "email":"milagrozambrano@gmail.com",
+    "senha": "abctefm",
+    "resenha":"abctefm",
+    "image": "Milagro.jpg"
     }
 
 
 ###
-DELETE http://localhost:9000/api/estudantes/2 HTTP/1.1
+DELETE http://localhost:9000/api/estudantes/3 HTTP/1.1
 
 ###
 PUT http://localhost:9000/api/estudantes/1 HTTP/1.1
@@ -77,10 +77,10 @@ Content-Type: application/json
 DELETE http://localhost:9000/api/professores/2 HTTP/1.1
 
 ###
-PUT http://localhost:9000/api/professores/1 HTTP/1.1
+PUT http://localhost:9000/api/professores/3 HTTP/1.1
 Content-Type: application/json
 
 {
-    "usuario":"olivers"
+    "usuario":"loaizam"
 
 }
