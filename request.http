@@ -84,3 +84,30 @@ Content-Type: application/json
     "usuario":"moaizam"
 
 }
+
+
+###
+GET http://localhost:9000/api/inscricao HTTP/1.1
+
+###
+POST http://localhost:9000/api/inscricao HTTP/1.1
+Content-Type: application/json
+
+{
+    "id_estudantes": 5,
+    "id_courses": 5
+    }
+
+
+###
+DELETE http://localhost:9000/api/inscricao/2 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/inscricao/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id_courses": 5
+
+}
+

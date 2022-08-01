@@ -161,6 +161,55 @@ routes.put('/professores/:idProfessor', (req, res) => {
 
 //inscripcao
 
+routes.get('/inscricao', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('SELECT * FROM inscricao', (err, rows) => {
+            if (err) return res.send(err)
+            res.send(rows)
 
+        })
+    })
+})
+
+routes.post('/inscricao', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+
+        conn.query('INSERT INTO inscricao set ?', [req.body], (err, rows) => {
+            if (err) return res.send(err)
+
+            res.send('inscricao added')
+
+        })
+    })
+})
+
+
+routes.delete('/inscricao/:idInscricao', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+
+        conn.query('DELETE FROM inscricao WHERE idInscricao= ?', [req.params.idInscricao], (err, rows) => {
+            if (err) return res.send(err)
+
+            res.send('inscricao delete')
+
+        })
+    })
+})
+
+routes.put('/inscricao/:idInscricao', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+
+        conn.query('UPDATE inscricao set ? WHERE idInscricao= ?', [req.body, req.params.idInscricao], (err, rows) => {
+            if (err) return res.send(err)
+
+            res.send('inscricao update')
+
+        })
+    })
+})
 
 module.exports = routes
