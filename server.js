@@ -12,7 +12,7 @@ const dbOptions = {
     port: '3306',
     user: 'root',
     password: 'abc123',
-    database: 'agenda',
+    database: 'escolas',
 }
 
 //middlewares--------------------------
