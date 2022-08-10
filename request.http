@@ -15,7 +15,7 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:9000/api/detalhes_course/3 HTTP/1.1
+DELETE http://localhost:9000/api/detalhes_course/6 HTTP/1.1
 
 ###
 PUT http://localhost:9000/api/detalhes_course/1 HTTP/1.1
@@ -110,4 +110,8 @@ Content-Type: application/json
     "id_courses": 5
 
 }
+
+
+###
+GET http://localhost:9000/api/dashboard/5 HTTP/1.1
 

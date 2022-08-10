@@ -43,7 +43,7 @@ routes.put('/detalhes_course/:idCourse', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
 
-        conn.query('UPDATE detalhes_courses set ? WHERE idCourse= ?', [req.body,req.params.idCourse], (err, rows) => {
+        conn.query('UPDATE detalhes_courses set ? WHERE idCourse= ?', [req.body, req.params.idCourse], (err, rows) => {
             if (err) return res.send(err)
 
             res.send('curso update')
@@ -211,5 +211,31 @@ routes.put('/inscricao/:idInscricao', (req, res) => {
         })
     })
 })
+  //inscricao estudantes
+    routes.get('/dashboard/:idEstudantes', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+
+        conn.query('SELECT detalhes_courses.nome, detalhes_courses.detalhes FROM estudantes INNER JOIN inscricao ON estudantes.idEstudantes = inscricao.id_estudantes INNER JOIN detalhes_courses ON inscricao.id_courses = detalhes_courses.idCourse WHERE estudantes.idEstudantes = ?', [req.body, req.params.idEstudantes], (err, rows) => {
+            if (err) return res.send(err)
+
+            res.send('curso inscripto')
+
+        })
+    })
+    })
+
+routes.post('/validacion', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+
+        conn.query('SELECT * FROM estudantes WHERE usuario=? AND senha=?', [req.body, req.params.usuario, req.params.senha], (err, rows) => {
+            if (err) return res.send(err)
+
+            res.send('administrador logeado')
+        })
+    })
+})
+
 
 module.exports = routes
